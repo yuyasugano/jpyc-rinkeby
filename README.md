@@ -20,8 +20,8 @@ To know details about `JPYC`, visit https://jpyc.jp/white-paper-en.pdf
  
 The test scripts are stored under the tests directory, it consists of general token test cases from `brownie bake token`.
 * __tests/test\_approve.py__: test cases about approve funtion.
-* __tests/test\_transferFrom.py: test cases about transferFrom function.
-* __tests/test\_transfer.py: test cases about transfer function.
+* __tests/test\_transferFrom.py__: test cases about transferFrom function.
+* __tests/test\_transfer.py__: test cases about transfer function.
  
 ```sh
 $ brownie --version
