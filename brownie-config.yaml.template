@@ -1,0 +1,31 @@
+# exclude SafeMath when calculating test coverage
+# https://eth-brownie.readthedocs.io/en/v1.10.3/config.html#exclude_paths
+reports:
+  exclude_contracts:
+    - SafeMath
+project_structure:
+  build: build
+  contracts: contracts
+  interfaces: interfaces
+  reports: reports
+  scripts: scripts
+  tests: tests
+compiler:
+  evm_version: null # the EVM version, byzantium, constantinople, petersburg
+  solc:
+    version: null # the version of the solc to use
+    optimizer:
+      enabled: true
+      runs: 200
+networks:
+  default: rinkeby
+  rinkeby:
+    gas_limit: auto
+    gas_buffer: 1.1
+    gas_price: auto
+    reverting_tx_gas_limit: false
+    default_contract_owner: true
+wallets:
+  from_key: '<your private key>'
+  # could also do from_mnemonic, and you'd have to change the accounts.add to accounts.from_mnemonic
+autofetch_sources: true

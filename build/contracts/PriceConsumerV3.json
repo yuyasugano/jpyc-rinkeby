@@ -1,0 +1,4752 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "getLatestPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "2": "contracts/PriceConsumerV3.sol",
+    "5": "contracts/interfaces/AggregatorV3Interface.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/PriceConsumerV3.sol",
+    "exportedSymbols": {
+      "PriceConsumerV3": [
+        690
+      ],
+      "SafeDiv": [
+        619
+      ]
+    },
+    "id": 691,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 591,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:2"
+      },
+      {
+        "absolutePath": "contracts/interfaces/AggregatorV3Interface.sol",
+        "file": "./interfaces/AggregatorV3Interface.sol",
+        "id": 592,
+        "nodeType": "ImportDirective",
+        "scope": 691,
+        "sourceUnit": 1650,
+        "src": "66:48:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 619,
+        "linearizedBaseContracts": [
+          619
+        ],
+        "name": "SafeDiv",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 617,
+              "nodeType": "Block",
+              "src": "656:106:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        },
+                        "id": 605,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 603,
+                          "name": "b",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 597,
+                          "src": "674:1:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 604,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "678:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "674:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "536166654d6174683a206469766973696f6e206279207a65726f",
+                        "id": 606,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "681:28:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_5b7cc70dda4dc2143e5adb63bd5d1f349504f461dbdfd9bc76fac1f8ca6d019f",
+                          "typeString": "literal_string \"SafeMath: division by zero\""
+                        },
+                        "value": "SafeMath: division by zero"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_5b7cc70dda4dc2143e5adb63bd5d1f349504f461dbdfd9bc76fac1f8ca6d019f",
+                          "typeString": "literal_string \"SafeMath: division by zero\""
+                        }
+                      ],
+                      "id": 602,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "666:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 607,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "666:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 608,
+                  "nodeType": "ExpressionStatement",
+                  "src": "666:44:2"
+                },
+                {
+                  "assignments": [
+                    610
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 610,
+                      "mutability": "mutable",
+                      "name": "c",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 617,
+                      "src": "720:8:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 609,
+                        "name": "int256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "720:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 614,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    },
+                    "id": 613,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 611,
+                      "name": "a",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 595,
+                      "src": "731:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "/",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 612,
+                      "name": "b",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 597,
+                      "src": "735:1:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "src": "731:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "720:16:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 615,
+                    "name": "c",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 610,
+                    "src": "754:1:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 601,
+                  "id": 616,
+                  "nodeType": "Return",
+                  "src": "747:8:2"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 593,
+              "nodeType": "StructuredDocumentation",
+              "src": "138:449:2",
+              "text": " @dev Returns the integer division of two signed integers. Reverts on\n division by zero. The result is rounded towards zero.\n Counterpart to Solidity's `/` operator. Note: this function uses a\n `revert` opcode (which leaves remaining gas untouched) while Solidity\n uses an invalid opcode to revert (consuming all remaining gas).\n Requirements:\n - The divisor cannot be zero."
+            },
+            "id": 618,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "div",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 598,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 595,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 618,
+                  "src": "605:8:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 594,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "605:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 597,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 618,
+                  "src": "615:8:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 596,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "604:20:2"
+            },
+            "returnParameters": {
+              "id": 601,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 600,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 618,
+                  "src": "648:6:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 599,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "648:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "647:8:2"
+            },
+            "scope": 619,
+            "src": "592:170:2",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 691,
+        "src": "116:648:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 690,
+        "linearizedBaseContracts": [
+          690
+        ],
+        "name": "PriceConsumerV3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 622,
+            "libraryName": {
+              "contractScope": null,
+              "id": 620,
+              "name": "SafeDiv",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 619,
+              "src": "803:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SafeDiv_$619",
+                "typeString": "library SafeDiv"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "797:25:2",
+            "typeName": {
+              "id": 621,
+              "name": "int256",
+              "nodeType": "ElementaryTypeName",
+              "src": "815:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "id": 624,
+            "mutability": "mutable",
+            "name": "priceFeedEth",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 690,
+            "src": "828:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+              "typeString": "contract AggregatorV3Interface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 623,
+              "name": "AggregatorV3Interface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1649,
+              "src": "828:21:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                "typeString": "contract AggregatorV3Interface"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 626,
+            "mutability": "mutable",
+            "name": "priceFeedJPY",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 690,
+            "src": "877:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+              "typeString": "contract AggregatorV3Interface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 625,
+              "name": "AggregatorV3Interface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1649,
+              "src": "877:21:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                "typeString": "contract AggregatorV3Interface"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 648,
+              "nodeType": "Block",
+              "src": "1202:205:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 637,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 630,
+                      "name": "priceFeedEth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 624,
+                      "src": "1212:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                        "typeString": "contract AggregatorV3Interface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "307838413735333734374131466134393445433930366345393045396633373536334138414636333065",
+                              "id": 634,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1257:42:2",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              },
+                              "value": "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "id": 633,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1249:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 632,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "1249:7:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          },
+                          "id": 635,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1249:51:2",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 631,
+                        "name": "AggregatorV3Interface",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1649,
+                        "src": "1227:21:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_AggregatorV3Interface_$1649_$",
+                          "typeString": "type(contract AggregatorV3Interface)"
+                        }
+                      },
+                      "id": 636,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1227:74:2",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                        "typeString": "contract AggregatorV3Interface"
+                      }
+                    },
+                    "src": "1212:89:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                      "typeString": "contract AggregatorV3Interface"
+                    }
+                  },
+                  "id": 638,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1212:89:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 646,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 639,
+                      "name": "priceFeedJPY",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 626,
+                      "src": "1311:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                        "typeString": "contract AggregatorV3Interface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "307833416532463436613244383465334435353930656536456535313136423830636146373744654341",
+                              "id": 643,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1356:42:2",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              },
+                              "value": "0x3Ae2F46a2D84e3D5590ee6Ee5116B80caF77DeCA"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "id": 642,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1348:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 641,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "1348:7:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          },
+                          "id": 644,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1348:51:2",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 640,
+                        "name": "AggregatorV3Interface",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1649,
+                        "src": "1326:21:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_AggregatorV3Interface_$1649_$",
+                          "typeString": "type(contract AggregatorV3Interface)"
+                        }
+                      },
+                      "id": 645,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1326:74:2",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                        "typeString": "contract AggregatorV3Interface"
+                      }
+                    },
+                    "src": "1311:89:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                      "typeString": "contract AggregatorV3Interface"
+                    }
+                  },
+                  "id": 647,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1311:89:2"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 627,
+              "nodeType": "StructuredDocumentation",
+              "src": "1054:121:2",
+              "text": " Network: Rinkeby\n Aggregator: JPY/USD\n Address: 0x3Ae2F46a2D84e3D5590ee6Ee5116B80caF77DeCA"
+            },
+            "id": 649,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 628,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1192:2:2"
+            },
+            "returnParameters": {
+              "id": 629,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1202:0:2"
+            },
+            "scope": 690,
+            "src": "1181:226:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 688,
+              "nodeType": "Block",
+              "src": "1513:447:2",
+              "statements": [
+                {
+                  "assignments": [
+                    656,
+                    658,
+                    660,
+                    662,
+                    664
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 656,
+                      "mutability": "mutable",
+                      "name": "roundID1",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1537:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint80",
+                        "typeString": "uint80"
+                      },
+                      "typeName": {
+                        "id": 655,
+                        "name": "uint80",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1537:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint80",
+                          "typeString": "uint80"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 658,
+                      "mutability": "mutable",
+                      "name": "price1",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1567:10:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 657,
+                        "name": "int",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1567:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 660,
+                      "mutability": "mutable",
+                      "name": "startedAt1",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1591:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 659,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1591:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 662,
+                      "mutability": "mutable",
+                      "name": "timeStamp1",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1620:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 661,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1620:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 664,
+                      "mutability": "mutable",
+                      "name": "answeredInRound1",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1649:23:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint80",
+                        "typeString": "uint80"
+                      },
+                      "typeName": {
+                        "id": 663,
+                        "name": "uint80",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1649:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint80",
+                          "typeString": "uint80"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 668,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 665,
+                        "name": "priceFeedEth",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 624,
+                        "src": "1685:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                          "typeString": "contract AggregatorV3Interface"
+                        }
+                      },
+                      "id": 666,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "latestRoundData",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1648,
+                      "src": "1685:28:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint80_$_t_int256_$_t_uint256_$_t_uint256_$_t_uint80_$",
+                        "typeString": "function () view external returns (uint80,int256,uint256,uint256,uint80)"
+                      }
+                    },
+                    "id": 667,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1685:30:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint80_$_t_int256_$_t_uint256_$_t_uint256_$_t_uint80_$",
+                      "typeString": "tuple(uint80,int256,uint256,uint256,uint80)"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1523:192:2"
+                },
+                {
+                  "assignments": [
+                    670,
+                    672,
+                    674,
+                    676,
+                    678
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 670,
+                      "mutability": "mutable",
+                      "name": "roundID2",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1740:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint80",
+                        "typeString": "uint80"
+                      },
+                      "typeName": {
+                        "id": 669,
+                        "name": "uint80",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1740:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint80",
+                          "typeString": "uint80"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 672,
+                      "mutability": "mutable",
+                      "name": "price2",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1769:10:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 671,
+                        "name": "int",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1769:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 674,
+                      "mutability": "mutable",
+                      "name": "startedAt2",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1793:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 673,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1793:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 676,
+                      "mutability": "mutable",
+                      "name": "timeStamp2",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1822:15:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 675,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1822:4:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 678,
+                      "mutability": "mutable",
+                      "name": "answeredInRound2",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 688,
+                      "src": "1851:23:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint80",
+                        "typeString": "uint80"
+                      },
+                      "typeName": {
+                        "id": 677,
+                        "name": "uint80",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1851:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint80",
+                          "typeString": "uint80"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 682,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 679,
+                        "name": "priceFeedJPY",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 626,
+                        "src": "1887:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AggregatorV3Interface_$1649",
+                          "typeString": "contract AggregatorV3Interface"
+                        }
+                      },
+                      "id": 680,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "latestRoundData",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1648,
+                      "src": "1887:28:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_uint80_$_t_int256_$_t_uint256_$_t_uint256_$_t_uint80_$",
+                        "typeString": "function () view external returns (uint80,int256,uint256,uint256,uint80)"
+                      }
+                    },
+                    "id": 681,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1887:30:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint80_$_t_int256_$_t_uint256_$_t_uint256_$_t_uint80_$",
+                      "typeString": "tuple(uint80,int256,uint256,uint256,uint80)"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1726:191:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 685,
+                        "name": "price2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 672,
+                        "src": "1946:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 683,
+                        "name": "price1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 658,
+                        "src": "1935:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "id": 684,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "div",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 618,
+                      "src": "1935:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_int256_$_t_int256_$returns$_t_int256_$bound_to$_t_int256_$",
+                        "typeString": "function (int256,int256) pure returns (int256)"
+                      }
+                    },
+                    "id": 686,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1935:18:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 654,
+                  "id": 687,
+                  "nodeType": "Return",
+                  "src": "1928:25:2"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 650,
+              "nodeType": "StructuredDocumentation",
+              "src": "1413:43:2",
+              "text": " Returns the latest price"
+            },
+            "functionSelector": "8e15f473",
+            "id": 689,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestPrice",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 651,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1484:2:2"
+            },
+            "returnParameters": {
+              "id": 654,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 653,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 689,
+                  "src": "1508:3:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 652,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1508:3:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1507:5:2"
+            },
+            "scope": 690,
+            "src": "1461:499:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 691,
+        "src": "766:1196:2"
+      }
+    ],
+    "src": "33:1930:2"
+  },
+  "bytecode": "608060405234801561001057600080fd5b50600080546001600160a01b0319908116738a753747a1fa494ec906ce90e9f37563a8af630e1790915560018054909116733ae2f46a2d84e3d5590ee6ee5116b80caf77deca179055610247806100686000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80638e15f47314610030575b600080fd5b61003861004a565b60408051918252519081900360200190f35b60008060008060008060008054906101000a90046001600160a01b03166001600160a01b031663feaf968c6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561009f57600080fd5b505afa1580156100b3573d6000803e3d6000fd5b505050506040513d60a08110156100c957600080fd5b508051602082015160408084015160608501516080909501516001548351633fabe5a360e21b81529351959b5093995090975093955092935060009283928392839283926001600160a01b039092169163feaf968c9160048082019260a092909190829003018186803b15801561013f57600080fd5b505afa158015610153573d6000803e3d6000fd5b505050506040513d60a081101561016957600080fd5b5080516020820151604083015160608401516080909401519298509096509450909250905061019889856101a7565b9a505050505050505050505090565b60008082136101fd576040805162461bcd60e51b815260206004820152601a60248201527f536166654d6174683a206469766973696f6e206279207a65726f000000000000604482015290519081900360640190fd5b600082848161020857fe5b0594935050505056fea2646970667358221220ec48a56da1a618c261f26e4b86858cfd8a2d37977959edd4371094f660d7924964736f6c634300060c0033",
+  "bytecodeSha1": "db944e50367ee99e68fc2c09cc37cc6e18d63c63",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.6.12"
+  },
+  "contractName": "PriceConsumerV3",
+  "coverageMap": {
+    "branches": {
+      "2": {
+        "SafeDiv.div": {
+          "2": [
+            674,
+            679,
+            true
+          ]
+        }
+      },
+      "5": {}
+    },
+    "statements": {
+      "2": {
+        "PriceConsumerV3.getLatestPrice": {
+          "0": [
+            1928,
+            1953
+          ]
+        },
+        "SafeDiv.div": {
+          "1": [
+            666,
+            710
+          ]
+        }
+      },
+      "5": {}
+    }
+  },
+  "dependencies": [
+    "AggregatorV3Interface",
+    "SafeDiv"
+  ],
+  "deployedBytecode": "608060405234801561001057600080fd5b506004361061002b5760003560e01c80638e15f47314610030575b600080fd5b61003861004a565b60408051918252519081900360200190f35b60008060008060008060008054906101000a90046001600160a01b03166001600160a01b031663feaf968c6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561009f57600080fd5b505afa1580156100b3573d6000803e3d6000fd5b505050506040513d60a08110156100c957600080fd5b508051602082015160408084015160608501516080909501516001548351633fabe5a360e21b81529351959b5093995090975093955092935060009283928392839283926001600160a01b039092169163feaf968c9160048082019260a092909190829003018186803b15801561013f57600080fd5b505afa158015610153573d6000803e3d6000fd5b505050506040513d60a081101561016957600080fd5b5080516020820151604083015160608401516080909401519298509096509450909250905061019889856101a7565b9a505050505050505050505090565b60008082136101fd576040805162461bcd60e51b815260206004820152601a60248201527f536166654d6174683a206469766973696f6e206279207a65726f000000000000604482015290519081900360640190fd5b600082848161020857fe5b0594935050505056fea2646970667358221220ec48a56da1a618c261f26e4b86858cfd8a2d37977959edd4371094f660d7924964736f6c634300060c0033",
+  "deployedSourceMap": "766:1196:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1461:499;;;:::i;:::-;;;;;;;;;;;;;;;;;1508:3;1537:15;1567:10;1591:15;1620;1649:23;1685:12;;;;;;;;-1:-1:-1;;;;;1685:12:2;-1:-1:-1;;;;;1685:28:2;;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1685:30:2;;;;;;;;;;;;;;;;;;;;1887:12;;:30;;-1:-1:-1;;;1887:30:2;;;;1685;;-1:-1:-1;1685:30:2;;-1:-1:-1;1685:30:2;;-1:-1:-1;1685:30:2;;-1:-1:-1;1685:30:2;;-1:-1:-1;1740:15:2;;;;;;;;;;-1:-1:-1;;;;;1887:12:2;;;;:28;;:30;;;;;1685;;1887;;;;;;;;:12;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1887:30:2;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1887:30:2;;-1:-1:-1;1887:30:2;-1:-1:-1;1887:30:2;;-1:-1:-1;1887:30:2;-1:-1:-1;1935:18:2;:6;1887:30;1935:10;:18::i;:::-;1928:25;;;;;;;;;;;;1461:499;:::o;592:170::-;648:6;678:1;674;:5;666:44;;;;;-1:-1:-1;;;666:44:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;720:8;735:1;731;:5;;;;;;;592:170;-1:-1:-1;;;;592:170:2:o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {
+      "getLatestPrice()": {
+        "notice": "Returns the latest price"
+      }
+    },
+    "version": 1
+  },
+  "offset": [
+    766,
+    1962
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x2B JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x8E15F473 EQ PUSH2 0x30 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x38 PUSH2 0x4A JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x0 DUP1 PUSH1 0x0 DUP1 PUSH1 0x0 DUP1 SLOAD SWAP1 PUSH2 0x100 EXP SWAP1 DIV PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH4 0xFEAF968C PUSH1 0x40 MLOAD DUP2 PUSH4 0xFFFFFFFF AND PUSH1 0xE0 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH1 0xA0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x9F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0xB3 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0xA0 DUP2 LT ISZERO PUSH2 0xC9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 MLOAD PUSH1 0x20 DUP3 ADD MLOAD PUSH1 0x40 DUP1 DUP5 ADD MLOAD PUSH1 0x60 DUP6 ADD MLOAD PUSH1 0x80 SWAP1 SWAP6 ADD MLOAD PUSH1 0x1 SLOAD DUP4 MLOAD PUSH4 0x3FABE5A3 PUSH1 0xE2 SHL DUP2 MSTORE SWAP4 MLOAD SWAP6 SWAP12 POP SWAP4 SWAP10 POP SWAP1 SWAP8 POP SWAP4 SWAP6 POP SWAP3 SWAP4 POP PUSH1 0x0 SWAP3 DUP4 SWAP3 DUP4 SWAP3 DUP4 SWAP3 DUP4 SWAP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP3 AND SWAP2 PUSH4 0xFEAF968C SWAP2 PUSH1 0x4 DUP1 DUP3 ADD SWAP3 PUSH1 0xA0 SWAP3 SWAP1 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x13F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0x153 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0xA0 DUP2 LT ISZERO PUSH2 0x169 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 MLOAD PUSH1 0x20 DUP3 ADD MLOAD PUSH1 0x40 DUP4 ADD MLOAD PUSH1 0x60 DUP5 ADD MLOAD PUSH1 0x80 SWAP1 SWAP5 ADD MLOAD SWAP3 SWAP9 POP SWAP1 SWAP7 POP SWAP5 POP SWAP1 SWAP3 POP SWAP1 POP PUSH2 0x198 DUP10 DUP6 PUSH2 0x1A7 JUMP JUMPDEST SWAP11 POP POP POP POP POP POP POP POP POP POP POP SWAP1 JUMP JUMPDEST PUSH1 0x0 DUP1 DUP3 SGT PUSH2 0x1FD JUMPI PUSH1 0x40 DUP1 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1A PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x536166654D6174683A206469766973696F6E206279207A65726F000000000000 PUSH1 0x44 DUP3 ADD MSTORE SWAP1 MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x64 ADD SWAP1 REVERT JUMPDEST PUSH1 0x0 DUP3 DUP5 DUP2 PUSH2 0x208 JUMPI INVALID JUMPDEST SDIV SWAP5 SWAP4 POP POP POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xEC 0x48 0xA5 PUSH14 0xA1A618C261F26E4B86858CFD8A2D CALLDATACOPY SWAP8 PUSH26 0x59EDD4371094F660D7924964736F6C634300060C003300000000 ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "CALLVALUE",
+      "path": "2"
+    },
+    "6": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x10"
+    },
+    "11": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "14": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "15": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "17": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x4"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "CALLDATASIZE",
+      "path": "2"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "LT",
+      "path": "2"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x2B"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "CALLDATALOAD",
+      "path": "2"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xE0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "SHR",
+      "path": "2"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "33": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH4",
+      "path": "2",
+      "value": "0x8E15F473"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "EQ",
+      "path": "2"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x30"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "44": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "46": {
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "47": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        766,
+        1962
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "48": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "49": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x38"
+    },
+    "52": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x4A"
+    },
+    "55": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "jump": "i",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "JUMP",
+      "path": "2"
+    },
+    "56": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "57": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "59": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "60": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "61": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SWAP2",
+      "path": "2"
+    },
+    "62": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "63": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "64": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "65": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "66": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "67": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "68": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SUB",
+      "path": "2"
+    },
+    "69": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x20"
+    },
+    "71": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "72": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "73": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "RETURN",
+      "path": "2"
+    },
+    "74": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "75": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1508,
+        1511
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "77": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1537,
+        1552
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "78": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1567,
+        1577
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "80": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1591,
+        1606
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "81": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1620,
+        1635
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "83": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1649,
+        1672
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "84": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "86": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "87": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "SLOAD",
+      "path": "2"
+    },
+    "88": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "89": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x100"
+    },
+    "92": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "EXP",
+      "path": "2"
+    },
+    "93": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "94": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "DIV",
+      "path": "2"
+    },
+    "95": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "97": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "99": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "101": {
+      "op": "SHL"
+    },
+    "102": {
+      "op": "SUB"
+    },
+    "103": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1697
+      ],
+      "op": "AND",
+      "path": "2"
+    },
+    "104": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "106": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "108": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "110": {
+      "op": "SHL"
+    },
+    "111": {
+      "op": "SUB"
+    },
+    "112": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1713
+      ],
+      "op": "AND",
+      "path": "2"
+    },
+    "113": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1713
+      ],
+      "op": "PUSH4",
+      "path": "2",
+      "value": "0xFEAF968C"
+    },
+    "118": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "120": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "121": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "122": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH4",
+      "path": "2",
+      "value": "0xFFFFFFFF"
+    },
+    "127": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "AND",
+      "path": "2"
+    },
+    "128": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xE0"
+    },
+    "130": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SHL",
+      "path": "2"
+    },
+    "131": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "132": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "133": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x4"
+    },
+    "135": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "136": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xA0"
+    },
+    "138": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "140": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "141": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "142": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "143": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SUB",
+      "path": "2"
+    },
+    "144": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "145": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP7",
+      "path": "2"
+    },
+    "146": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "147": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "EXTCODESIZE",
+      "path": "2"
+    },
+    "148": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "149": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "150": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "151": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x9F"
+    },
+    "154": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "155": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "157": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "158": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "159": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "160": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "161": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "GAS",
+      "path": "2"
+    },
+    "162": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "STATICCALL",
+      "path": "2"
+    },
+    "163": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "164": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "165": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "166": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0xB3"
+    },
+    "169": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "170": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "171": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "173": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "174": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "2"
+    },
+    "175": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "176": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "178": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "179": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "180": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "181": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "182": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "183": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "184": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "186": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "187": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "188": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xA0"
+    },
+    "190": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "191": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "LT",
+      "path": "2"
+    },
+    "192": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "193": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0xC9"
+    },
+    "196": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "197": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "199": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "200": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "201": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "202": {
+      "op": "POP"
+    },
+    "203": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "204": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "205": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x20"
+    },
+    "207": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "208": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "209": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "210": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "212": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "213": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP5",
+      "path": "2"
+    },
+    "214": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "215": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "216": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x60"
+    },
+    "218": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "DUP6",
+      "path": "2"
+    },
+    "219": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "220": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "221": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x80"
+    },
+    "223": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "224": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP6",
+      "path": "2"
+    },
+    "225": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "226": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "227": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x1"
+    },
+    "229": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "SLOAD",
+      "path": "2"
+    },
+    "230": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "231": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "232": {
+      "op": "PUSH4",
+      "value": "0x3FABE5A3"
+    },
+    "237": {
+      "op": "PUSH1",
+      "value": "0xE2"
+    },
+    "239": {
+      "op": "SHL"
+    },
+    "240": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "241": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "242": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP4",
+      "path": "2"
+    },
+    "243": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "244": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP6",
+      "path": "2"
+    },
+    "245": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP12",
+      "path": "2"
+    },
+    "246": {
+      "op": "POP"
+    },
+    "247": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP4",
+      "path": "2"
+    },
+    "248": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP10",
+      "path": "2"
+    },
+    "249": {
+      "op": "POP"
+    },
+    "250": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "251": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP8",
+      "path": "2"
+    },
+    "252": {
+      "op": "POP"
+    },
+    "253": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP4",
+      "path": "2"
+    },
+    "254": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP6",
+      "path": "2"
+    },
+    "255": {
+      "op": "POP"
+    },
+    "256": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "257": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP4",
+      "path": "2"
+    },
+    "258": {
+      "op": "POP"
+    },
+    "259": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "261": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "262": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "263": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "264": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "265": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "266": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "267": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "268": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "269": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1740,
+        1755
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "270": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "272": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "274": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "276": {
+      "op": "SHL"
+    },
+    "277": {
+      "op": "SUB"
+    },
+    "278": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "279": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "280": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "AND",
+      "path": "2"
+    },
+    "281": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "SWAP2",
+      "path": "2"
+    },
+    "282": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1915
+      ],
+      "op": "PUSH4",
+      "path": "2",
+      "value": "0xFEAF968C"
+    },
+    "287": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1915
+      ],
+      "op": "SWAP2",
+      "path": "2"
+    },
+    "288": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x4"
+    },
+    "290": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "291": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "292": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "293": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "294": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xA0"
+    },
+    "296": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1685,
+        1715
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "297": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "298": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP2",
+      "path": "2"
+    },
+    "299": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "300": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "301": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "302": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SUB",
+      "path": "2"
+    },
+    "303": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "304": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "305": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1899
+      ],
+      "op": "DUP7",
+      "path": "2"
+    },
+    "306": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "307": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "EXTCODESIZE",
+      "path": "2"
+    },
+    "308": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "309": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "310": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "311": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x13F"
+    },
+    "314": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "315": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "317": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "318": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "319": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "320": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "321": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "GAS",
+      "path": "2"
+    },
+    "322": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "STATICCALL",
+      "path": "2"
+    },
+    "323": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "324": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "325": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "326": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x153"
+    },
+    "329": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "330": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "331": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "333": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "334": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "2"
+    },
+    "335": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "336": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "338": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "339": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "340": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "341": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "342": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "343": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "344": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "346": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "347": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "2"
+    },
+    "348": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0xA0"
+    },
+    "350": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "351": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "LT",
+      "path": "2"
+    },
+    "352": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ISZERO",
+      "path": "2"
+    },
+    "353": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x169"
+    },
+    "356": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "357": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "359": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "360": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "361": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "362": {
+      "op": "POP"
+    },
+    "363": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "364": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "365": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x20"
+    },
+    "367": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "368": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "369": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "370": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "372": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP4",
+      "path": "2"
+    },
+    "373": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "374": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "375": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x60"
+    },
+    "377": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP5",
+      "path": "2"
+    },
+    "378": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "379": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "380": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x80"
+    },
+    "382": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "383": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP5",
+      "path": "2"
+    },
+    "384": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "385": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "386": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "387": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP9",
+      "path": "2"
+    },
+    "388": {
+      "op": "POP"
+    },
+    "389": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "390": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP7",
+      "path": "2"
+    },
+    "391": {
+      "op": "POP"
+    },
+    "392": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP5",
+      "path": "2"
+    },
+    "393": {
+      "op": "POP"
+    },
+    "394": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "395": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP3",
+      "path": "2"
+    },
+    "396": {
+      "op": "POP"
+    },
+    "397": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "398": {
+      "op": "POP"
+    },
+    "399": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1935,
+        1953
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "statement": 0,
+      "value": "0x198"
+    },
+    "402": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1935,
+        1941
+      ],
+      "op": "DUP10",
+      "path": "2"
+    },
+    "403": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1887,
+        1917
+      ],
+      "op": "DUP6",
+      "path": "2"
+    },
+    "404": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1935,
+        1945
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x1A7"
+    },
+    "407": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "jump": "i",
+      "offset": [
+        1935,
+        1953
+      ],
+      "op": "JUMP",
+      "path": "2"
+    },
+    "408": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1935,
+        1953
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "409": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "SWAP11",
+      "path": "2"
+    },
+    "410": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "411": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "412": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "413": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "414": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "415": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "416": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "417": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "418": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "419": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "420": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1928,
+        1953
+      ],
+      "op": "POP",
+      "path": "2"
+    },
+    "421": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "422": {
+      "fn": "PriceConsumerV3.getLatestPrice",
+      "jump": "o",
+      "offset": [
+        1461,
+        1960
+      ],
+      "op": "JUMP",
+      "path": "2"
+    },
+    "423": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        592,
+        762
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "424": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        648,
+        654
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "426": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        678,
+        679
+      ],
+      "op": "DUP1",
+      "path": "2",
+      "statement": 1
+    },
+    "427": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        674,
+        675
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "428": {
+      "branch": 2,
+      "fn": "SafeDiv.div",
+      "offset": [
+        674,
+        679
+      ],
+      "op": "SGT",
+      "path": "2"
+    },
+    "429": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x1FD"
+    },
+    "432": {
+      "branch": 2,
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "433": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x40"
+    },
+    "435": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP1",
+      "path": "2"
+    },
+    "436": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "437": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "441": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "443": {
+      "op": "SHL"
+    },
+    "444": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "445": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "446": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x20"
+    },
+    "448": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x4"
+    },
+    "450": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "451": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "452": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "453": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x1A"
+    },
+    "455": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x24"
+    },
+    "457": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "458": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "459": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "460": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH32",
+      "path": "2",
+      "value": "0x536166654D6174683A206469766973696F6E206279207A65726F000000000000"
+    },
+    "493": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x44"
+    },
+    "495": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "496": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "497": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MSTORE",
+      "path": "2"
+    },
+    "498": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "499": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "MLOAD",
+      "path": "2"
+    },
+    "500": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "501": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "502": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "503": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "SUB",
+      "path": "2"
+    },
+    "504": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x64"
+    },
+    "506": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "ADD",
+      "path": "2"
+    },
+    "507": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "SWAP1",
+      "path": "2"
+    },
+    "508": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "REVERT",
+      "path": "2"
+    },
+    "509": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        666,
+        710
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "510": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        720,
+        728
+      ],
+      "op": "PUSH1",
+      "path": "2",
+      "value": "0x0"
+    },
+    "512": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        735,
+        736
+      ],
+      "op": "DUP3",
+      "path": "2"
+    },
+    "513": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        732
+      ],
+      "op": "DUP5",
+      "path": "2"
+    },
+    "514": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "DUP2",
+      "path": "2"
+    },
+    "515": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "PUSH2",
+      "path": "2",
+      "value": "0x208"
+    },
+    "518": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "JUMPI",
+      "path": "2"
+    },
+    "519": {
+      "dev": "Division by zero",
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "INVALID",
+      "path": "2"
+    },
+    "520": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "JUMPDEST",
+      "path": "2"
+    },
+    "521": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "SDIV",
+      "path": "2"
+    },
+    "522": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        731,
+        736
+      ],
+      "op": "SWAP5",
+      "path": "2"
+    },
+    "523": {
+      "fn": "SafeDiv.div",
+      "offset": [
+        592,
+        762
+      ],
+      "op": "SWAP4",
+      "path": "2"
+    },
+    "524": {
+      "op": "POP"
+    },
+    "525": {
+      "op": "POP"
+    },
+    "526": {
+      "op": "POP"
+    },
+    "527": {
+      "op": "POP"
+    },
+    "528": {
+      "fn": "SafeDiv.div",
+      "jump": "o",
+      "offset": [
+        592,
+        762
+      ],
+      "op": "JUMP",
+      "path": "2"
+    }
+  },
+  "sha1": "177a252c84750d5d31841f16c64e3843de4e5fc0",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.2 <0.8.0;\n\nimport \"./interfaces/AggregatorV3Interface.sol\";\n\nlibrary SafeDiv {\n    /**\n     * @dev Returns the integer division of two signed integers. Reverts on\n     * division by zero. The result is rounded towards zero.\n     *\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\n     * uses an invalid opcode to revert (consuming all remaining gas).\n     *\n     * Requirements:\n     *\n     * - The divisor cannot be zero.\n     */\n    function div(int256 a, int256 b) internal pure returns (int256) {\n        require(b > 0, \"SafeMath: division by zero\");\n        int256 c = a / b;\n\n        return c;\n    }\n}\n\ncontract PriceConsumerV3 {\n    using SafeDiv for int256;\n\n    AggregatorV3Interface internal priceFeedEth;\n    AggregatorV3Interface internal priceFeedJPY;\n\n    /**\n     * Network: Rinkeby\n     * Aggregator: ETH/USD\n     * Address: 0x8A753747A1Fa494EC906cE90E9f37563A8AF630e\n     */\n\n    /**\n     * Network: Rinkeby\n     * Aggregator: JPY/USD\n     * Address: 0x3Ae2F46a2D84e3D5590ee6Ee5116B80caF77DeCA\n     */\n\n    constructor() public {\n        priceFeedEth = AggregatorV3Interface(address(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e));\n        priceFeedJPY = AggregatorV3Interface(address(0x3Ae2F46a2D84e3D5590ee6Ee5116B80caF77DeCA));\n    }\n\n    /**\n     * Returns the latest price\n     */\n    function getLatestPrice() public view returns (int) {\n        (\n            uint80 roundID1, \n            int price1,\n            uint startedAt1,\n            uint timeStamp1,\n            uint80 answeredInRound1\n        ) = priceFeedEth.latestRoundData();\n\n        (\n            uint80 roundID2,\n            int price2,\n            uint startedAt2,\n            uint timeStamp2,\n            uint80 answeredInRound2\n        ) = priceFeedJPY.latestRoundData();\n\n        return price1.div(price2);\n    }\n}\n",
+  "sourceMap": "766:1196:2:-:0;;;1181:226;;;;;;;;;-1:-1:-1;1212:12:2;:89;;-1:-1:-1;;;;;;1212:89:2;;;1257:42;1212:89;;;;;1311;;;;;1356:42;1311:89;;;766:1196;;;;;;",
+  "sourcePath": "contracts/PriceConsumerV3.sol",
+  "type": "contract"
+}

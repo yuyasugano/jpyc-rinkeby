@@ -1,0 +1,9 @@
+__pycache__
+.github
+.github/*
+.history
+.hypothesis/
+reports/
+scripts/__pycache__
+build/tests.json
+brownie-config.yaml
